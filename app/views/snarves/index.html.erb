@@ -1,0 +1,23 @@
+<h1>Listing snarves</h1>
+
+<table>
+  <tr>
+    <th>Quote</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @snarves.each do |snarf| %>
+  <tr>
+    <td><%= snarf.quote %></td>
+    <td><%= link_to 'Show', snarf %></td>
+    <td><%= link_to 'Edit', edit_snarf_path(snarf) %></td>
+    <td><%= link_to 'Destroy', snarf, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Snarf', new_snarf_path %>

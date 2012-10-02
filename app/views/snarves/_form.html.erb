@@ -1,0 +1,21 @@
+<%= form_for(@snarf) do |f| %>
+  <% if @snarf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@snarf.errors.count, "error") %> prohibited this snarf from being saved:</h2>
+
+      <ul>
+      <% @snarf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :quote %><br />
+    <%= f.text_field :quote %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
